@@ -1,18 +1,16 @@
 package com.developersbreach.darkthemeandroid
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import androidx.navigation.NavDirections
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 
 /**
  * A simple [Fragment] subclass.
  */
-class ListFragment : Fragment() {
+class SearchFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
     private var socialList: List<Social> = ArrayList()
@@ -22,26 +20,17 @@ class ListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view: View = inflater.inflate(R.layout.fragment_list, container, false)
+        val view: View = inflater.inflate(R.layout.fragment_search, container, false)
 
         socialList = socialList()
-        recyclerView = view.findViewById(R.id.recycler_view)
+        recyclerView = view.findViewById(R.id.search_recycler_view)
 
-        val socialAdapter = SocialAdapter(socialList, socialItemListener())
-        recyclerView.adapter = socialAdapter
+        val searchAdapter = SearchAdapter(socialList)
+        recyclerView.adapter = searchAdapter
 
-        RecyclerViewItemDecoration.setItemSpacing(resources, recyclerView)
         return view
     }
 
-    private fun socialItemListener(): SocialAdapter.OnClickListener {
-        return SocialAdapter.OnClickListener { social ->
-
-            val direction: NavDirections =
-                ListFragmentDirections.actionListFragmentToDetailFragment(social)
-            Navigation.findNavController(requireView()).navigate(direction)
-        }
-    }
 }
 
 private operator fun <E> List<E>.invoke(): List<Social> {
