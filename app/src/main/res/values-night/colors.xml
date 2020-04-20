@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorSurface">#121212</color>
+    <color name="colorOnSurface">#ffffff</color>
+
+    <color name="colorPrimary">#212121</color>
+    <color name="colorPrimaryVariant">#484848</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorOnPrimary">#ffffff</color>
+
+    <color name="colorSecondary">#ff6f00</color>
+    <color name="colorSecondaryVariant">#ffa040</color>
+    <color name="colorOnSecondary">#000000</color>
+</resources>
