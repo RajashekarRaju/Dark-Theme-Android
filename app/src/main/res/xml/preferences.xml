@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Preference
+        app:icon="@drawable/ic_account"
+        app:key="SomeKey"
+        app:summary="@string/preference_summary_account"
+        app:title="@string/preference_title_account" />
+
+    <Preference
+        app:icon="@drawable/ic_notifications"
+        app:summary="@string/preference_summary_notifications"
+        app:title="@string/preference_title_notifications" />
+
+    <Preference
+        app:icon="@drawable/ic_developer"
+        app:summary="@string/preference_summary_developer"
+        app:title="@string/preference_title_developer" />
+
+    <Preference
+        app:icon="@drawable/ic_about"
+        app:summary="@string/preference_summary_about"
+        app:title="@string/preference_title_about" />
+
+</PreferenceScreen>
