@@ -33,10 +33,13 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.listFragment,
                 R.id.searchFragment,
+                R.id.themesFragment,
                 R.id.settingsFragment -> {
                     NavigationUI.onNavDestinationSelected(item, mNavigationController)
                 }
-                else -> TODO("Not yet implemented")
+                else -> {
+                    TODO("Not yet implemented")
+                }
             }
         }
 

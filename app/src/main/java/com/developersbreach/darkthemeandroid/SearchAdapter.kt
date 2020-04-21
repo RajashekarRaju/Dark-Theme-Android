@@ -9,9 +9,9 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
 class SearchAdapter(
-    private val socialList: List<Social>
+    private val socialList: List<Sports>
 ) :
-    ListAdapter<Social, SearchAdapter.SearchViewHolder>(
+    ListAdapter<Sports, SearchAdapter.SearchViewHolder>(
         DiffCallback
     ) {
 
@@ -30,18 +30,18 @@ class SearchAdapter(
     }
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
-        val social: Social = socialList[position]
-        holder.titleTextView.text = social.title
+        val sports: Sports = socialList[position]
+        holder.titleTextView.text = sports.title
     }
 
     override fun getItemCount() = socialList.size
 
-    companion object DiffCallback : DiffUtil.ItemCallback<Social>() {
-        override fun areItemsTheSame(oldItem: Social, newItem: Social): Boolean {
+    companion object DiffCallback : DiffUtil.ItemCallback<Sports>() {
+        override fun areItemsTheSame(oldItem: Sports, newItem: Sports): Boolean {
             return oldItem === newItem
         }
 
-        override fun areContentsTheSame(oldItem: Social, newItem: Social): Boolean {
+        override fun areContentsTheSame(oldItem: Sports, newItem: Sports): Boolean {
             return oldItem.title == newItem.title
         }
     }
