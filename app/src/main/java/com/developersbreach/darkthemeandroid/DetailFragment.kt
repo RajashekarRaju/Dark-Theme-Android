@@ -18,12 +18,12 @@ import com.google.android.material.appbar.CollapsingToolbarLayout
  */
 class DetailFragment : Fragment() {
 
-    private lateinit var socialArgs: Social
+    private lateinit var sportsArgs: Sports
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val args = requireArguments()
-        socialArgs = DetailFragmentArgs.fromBundle(args).detailFragmentArgs
+        sportsArgs = DetailFragmentArgs.fromBundle(args).detailFragmentArgs
     }
 
     override fun onCreateView(
@@ -40,10 +40,12 @@ class DetailFragment : Fragment() {
         val icon: ImageView = view.findViewById(R.id.social_detail_image_view)
         val title: TextView = view.findViewById(R.id.title_detail_text_view)
         val subtitle: TextView = view.findViewById(R.id.subtitle_detail_text_view)
+        val about: TextView = view.findViewById(R.id.about_detail_text_view)
 
-        icon.setImageResource(socialArgs.icon)
-        title.text = socialArgs.title
-        subtitle.text = socialArgs.subtitle
+        icon.setImageResource(sportsArgs.icon)
+        title.text = sportsArgs.title
+        subtitle.text = sportsArgs.subtitle
+        about.text = sportsArgs.about
 
         toolbar.setNavigationOnClickListener { v ->
             Navigation.findNavController(v).navigateUp()
@@ -59,7 +61,7 @@ class DetailFragment : Fragment() {
                 }
                 if (scrollRange + verticalOffset == 0) {
                     // Show title when completely collapsed.
-                    collapsingToolbar.title = socialArgs.title
+                    collapsingToolbar.title = sportsArgs.title
                     isShow = true
                 } else if (isShow) {
                     // Hide title when collapsedToolBar is completely visible using empty string.

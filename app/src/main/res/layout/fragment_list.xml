@@ -17,7 +17,8 @@
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:title="List Fragment"
+            app:titleTextAppearance="@style/TextAppearance.Article.Toolbar.Title"
+            app:title="Sports"
             app:layout_scrollFlags="scroll|enterAlways" />
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -34,6 +35,6 @@
         android:layout_marginBottom="?actionBarSize"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:itemCount="6"
-        tools:listitem="@layout/item_social" />
+        tools:listitem="@layout/item_sports" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
