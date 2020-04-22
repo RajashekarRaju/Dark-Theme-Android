@@ -1,7 +1,8 @@
-package com.developersbreach.darkthemeandroid
+package com.developersbreach.darkthemeandroid.model
 
 import android.content.Context
 import android.os.Parcelable
+import com.developersbreach.darkthemeandroid.R
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize

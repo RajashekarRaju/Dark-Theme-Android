@@ -1,4 +1,4 @@
-package com.developersbreach.darkthemeandroid
+package com.developersbreach.darkthemeandroid.view.list
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.developersbreach.darkthemeandroid.R
+import com.developersbreach.darkthemeandroid.model.Sports
 
 class SportsAdapter(
     private val sportsList: List<Sports>,

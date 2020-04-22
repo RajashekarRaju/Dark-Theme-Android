@@ -1,4 +1,4 @@
-package com.developersbreach.darkthemeandroid
+package com.developersbreach.darkthemeandroid.view
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.developersbreach.darkthemeandroid.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -18,7 +19,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         bottomNavigationView = findViewById(R.id.bottom_navigation_view)
-        mNavigationController = Navigation.findNavController(this, R.id.myNavHostFragment)
+        mNavigationController = Navigation.findNavController(this,
+            R.id.myNavHostFragment
+        )
         NavigationUI.setupWithNavController(bottomNavigationView, mNavigationController)
 
         mNavigationController.addOnDestinationChangedListener { _, destination, _ ->

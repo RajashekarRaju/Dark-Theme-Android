@@ -1,9 +1,10 @@
-package com.developersbreach.darkthemeandroid
+package com.developersbreach.darkthemeandroid.view.list
 
 import android.content.res.Resources
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.developersbreach.darkthemeandroid.R
 
 class RecyclerViewItemDecoration(spacingInPixels: Int) : RecyclerView.ItemDecoration() {
 
@@ -24,7 +25,11 @@ class RecyclerViewItemDecoration(spacingInPixels: Int) : RecyclerView.ItemDecora
             recyclerView: RecyclerView
         ) {
             val spacingInPixels = resources.getDimensionPixelSize(R.dimen.recycler_view_spacing_dimen)
-            recyclerView.addItemDecoration(RecyclerViewItemDecoration(spacingInPixels))
+            recyclerView.addItemDecoration(
+                RecyclerViewItemDecoration(
+                    spacingInPixels
+                )
+            )
         }
     }
 }

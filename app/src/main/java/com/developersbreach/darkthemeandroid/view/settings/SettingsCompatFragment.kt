@@ -1,7 +1,8 @@
-package com.developersbreach.darkthemeandroid
+package com.developersbreach.darkthemeandroid.view.settings
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
+import com.developersbreach.darkthemeandroid.R
 
 class SettingsCompatFragment : PreferenceFragmentCompat() {
 
