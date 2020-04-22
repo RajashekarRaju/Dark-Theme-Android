@@ -1,13 +1,17 @@
-package com.developersbreach.darkthemeandroid
+package com.developersbreach.darkthemeandroid.view.list
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.developersbreach.darkthemeandroid.R
+import com.developersbreach.darkthemeandroid.viewModel.ListViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -15,7 +19,11 @@ import androidx.recyclerview.widget.RecyclerView
 class ListFragment : Fragment() {
 
     private lateinit var recyclerView: RecyclerView
-    private var sportsList: List<Sports> = ArrayList()
+    private lateinit var adapter: SportsAdapter
+
+    private val viewModel: ListViewModel by lazy {
+        ViewModelProvider(this).get(ListViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,13 +32,18 @@ class ListFragment : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater.inflate(R.layout.fragment_list, container, false)
 
-        sportsList = Sports.sportsList(requireContext())
         recyclerView = view.findViewById(R.id.recycler_view)
 
-        val sportsAdapter = SportsAdapter(sportsList, sportsItemListener())
-        recyclerView.adapter = sportsAdapter
+        viewModel.getSports().observe(viewLifecycleOwner, Observer { sportsList ->
+            adapter = SportsAdapter(sportsList, sportsItemListener())
+            recyclerView.adapter = adapter
+        })
 
-        RecyclerViewItemDecoration.setItemSpacing(resources, recyclerView)
+        RecyclerViewItemDecoration.setItemSpacing(
+            resources,
+            recyclerView
+        )
+
         return view
     }
 
@@ -38,7 +51,9 @@ class ListFragment : Fragment() {
         return SportsAdapter.OnClickListener { sports ->
 
             val direction: NavDirections =
-                ListFragmentDirections.actionListFragmentToDetailFragment(sports)
+                ListFragmentDirections.actionListFragmentToDetailFragment(
+                    sports
+                )
             Navigation.findNavController(requireView()).navigate(direction)
         }
     }

@@ -1,5 +1,6 @@
-package com.developersbreach.darkthemeandroid
+package com.developersbreach.darkthemeandroid.view.detail
 
+import android.app.Application
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +9,13 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
+import com.developersbreach.darkthemeandroid.R
+import com.developersbreach.darkthemeandroid.model.Sports
+import com.developersbreach.darkthemeandroid.viewModel.DetailViewModel
+import com.developersbreach.darkthemeandroid.viewModel.DetailViewModelFactory
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.appbar.AppBarLayout.OnOffsetChangedListener
 import com.google.android.material.appbar.CollapsingToolbarLayout
@@ -19,11 +26,15 @@ import com.google.android.material.appbar.CollapsingToolbarLayout
 class DetailFragment : Fragment() {
 
     private lateinit var sportsArgs: Sports
+    private lateinit var viewModel: DetailViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val args = requireArguments()
+        val application: Application = requireActivity().application
         sportsArgs = DetailFragmentArgs.fromBundle(args).detailFragmentArgs
+        val factory = DetailViewModelFactory(application, sportsArgs)
+        viewModel = ViewModelProvider(this, factory).get(DetailViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -42,10 +53,12 @@ class DetailFragment : Fragment() {
         val subtitle: TextView = view.findViewById(R.id.subtitle_detail_text_view)
         val about: TextView = view.findViewById(R.id.about_detail_text_view)
 
-        icon.setImageResource(sportsArgs.icon)
-        title.text = sportsArgs.title
-        subtitle.text = sportsArgs.subtitle
-        about.text = sportsArgs.about
+        viewModel.getSport().observe(viewLifecycleOwner, Observer { sport ->
+            icon.setImageResource(sport.icon)
+            title.text = sport.title
+            subtitle.text = sport.subtitle
+            about.text = sport.about
+        })
 
         toolbar.setNavigationOnClickListener { v ->
             Navigation.findNavController(v).navigateUp()
