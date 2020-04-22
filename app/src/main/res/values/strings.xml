@@ -3,6 +3,7 @@
 
     <string name="sports_menu_item_title">Sports</string>
     <string name="search_menu_item_title">Search</string>
+    <string name="theme_menu_item_title">Theme</string>
     <string name="settings_menu_title_settings">Settings</string>
     <string name="search_articles_hint">Search</string>
 
@@ -41,6 +42,16 @@
     <string name="subtitle_soccer">1863</string>
     <string name="subtitle_handball">2 December 1917</string>
     <string name="subtitle_tennis">1859</string>
+
+    <string name="on_primary">On Primary</string>
+    <string name="on_secondary">On Secondary</string>
+    <string name="on_primary_variant">On Primary Variant</string>
+    <string name="on_secondary_variant">On Secondary Variant</string>
+    <string name="on_primary_dark">On Primary Dark</string>
+    <string name="on_surface">On Surface</string>
+    <string name="on_error">On Error</string>
+    <string name="on_accent">On Accent</string>
+    <string name="on_background">On Background</string>
 
     <string name="about_rugby">
         Rugby union, widely known simply as rugby, is a full contact team sport that originated in
@@ -255,9 +266,6 @@
         electronic review technology coupled with a point-challenge system, which allows a player to
         contest the line call of a point, a system known as Hawk-Eye.
     </string>
-
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="theme_menu_item_title">Theme</string>
+    <string name="no_search_results_found">No Results Found</string>
 
 </resources>
