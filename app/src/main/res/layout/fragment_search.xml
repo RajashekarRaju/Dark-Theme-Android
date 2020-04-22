@@ -6,15 +6,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context=".SearchFragment">
+    tools:context=".view.search.SearchFragment">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="2dp"
-        app:liftOnScroll="true"
-        app:liftOnScrollTargetViewId="@id/search_recycler_view">
+        app:elevation="0dp">
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
@@ -42,19 +41,37 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/search_recycler_view"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:clipToPadding="false"
-        android:orientation="vertical"
-        android:padding="@dimen/recycler_view_spacing_dimen"
-        android:scrollbars="none"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:itemCount="6"
-        tools:listitem="@layout/item_search" />
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="@dimen/recycler_view_spacing_dimen"
+            android:scrollbars="none"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:itemCount="6"
+            tools:listitem="@layout/item_search" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/rubik"
+            android:textColor="?attr/colorOnBackground"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
+            android:id="@+id/no_search_results_found_text"
+            android:text="@string/no_search_results_found"
+            android:visibility="invisible" />
+
+    </FrameLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
