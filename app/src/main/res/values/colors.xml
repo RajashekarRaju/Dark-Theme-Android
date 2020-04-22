@@ -2,14 +2,18 @@
 <resources>
 
     <color name="colorSurface">#eeeeee</color>
-    <color name="colorOnSurface">#000000</color>
-
     <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryVariant">#ffffff</color>
-    <color name="colorPrimaryDark">#cccccc</color>
-    <color name="colorOnPrimary">#000000</color>
-
     <color name="colorSecondary">#121212</color>
-    <color name="colorSecondaryVariant">#383838</color>
+    <color name="colorBackground">#ffffff</color>
+
+    <color name="colorOnSurface">#000000</color>
+    <color name="colorOnPrimary">#000000</color>
     <color name="colorOnSecondary">#ffffff</color>
+    <color name="colorOnBackground">#000000</color>
+
+    <color name="colorPrimaryVariant">#ffffff</color>
+    <color name="colorSecondaryVariant">#383838</color>
+
+    <color name="colorPrimaryDark">#cccccc</color>
+
 </resources>
