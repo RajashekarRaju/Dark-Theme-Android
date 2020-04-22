@@ -1,59 +1,241 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ThemesFragment">
+    android:fitsSystemWindows="true"
+    tools:context=".view.theme.ThemesFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:cardBackgroundColor="?attr/colorPrimary"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="wrap_content"
+        app:liftOnScroll="true"
+        app:liftOnScrollTargetViewId="@id/themes_fragment_scroll_container">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView2"
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:title="Settings"
+            app:titleTextAppearance="@style/TextAppearance.Article.Toolbar.Title" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/themes_fragment_scroll_container"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:cardBackgroundColor="?attr/colorSecondary"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="?actionBarSize"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView3"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:cardBackgroundColor="?attr/colorSurface"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ThemesFragment">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/materialCardView4"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:cardBackgroundColor="?attr/colorPrimaryDark"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView3" />
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPrimary"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="?attr/colorPrimary"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toStartOf="@id/cardSecondary"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        app:cardBackgroundColor="?attr/colorPrimaryVariant"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/materialCardView4" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/on_primary"
+                    android:textColor="@color/colorOnPrimary"
+                    android:textSize="24sp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSecondary"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="?attr/colorSecondary"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintStart_toEndOf="@id/cardPrimary"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/on_secondary"
+                    android:textColor="@color/colorOnSecondary"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPrimaryVariant"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="?attr/colorPrimaryVariant"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toStartOf="@id/cardSecondaryVariant"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardPrimary">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:gravity="center"
+                    android:text="@string/on_primary_variant"
+                    android:textColor="@color/colorOnPrimary"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSecondaryVariant"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="?attr/colorSecondaryVariant"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintStart_toEndOf="@id/cardPrimaryVariant"
+                app:layout_constraintTop_toBottomOf="@id/cardSecondary">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:gravity="center"
+                    android:text="@string/on_secondary_variant"
+                    android:textColor="@color/colorOnSecondary"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPrimaryDark"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="?attr/colorPrimaryDark"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toStartOf="@id/cardSurface"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardPrimaryVariant">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/on_primary_dark"
+                    android:textColor="@color/colorOnPrimary"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSurface"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="?attr/colorSurface"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintStart_toEndOf="@id/cardPrimaryDark"
+                app:layout_constraintTop_toBottomOf="@id/cardSecondaryVariant">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/on_surface"
+                    android:textColor="@color/colorOnSurface"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardError"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="?attr/colorError"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toStartOf="@id/cardAccent"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardPrimaryDark">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/on_error"
+                    android:textColor="?attr/colorOnError"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardAccent"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="?attr/colorAccent"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="5"
+                app:layout_constraintStart_toEndOf="@id/cardError"
+                app:layout_constraintTop_toBottomOf="@id/cardSurface">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/on_accent"
+                    android:textColor="?attr/colorOnSecondary"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardBackground"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                app:cardBackgroundColor="@color/colorBackground"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintEnd_toEndOf="@id/cardError"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardError">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="@font/rubik_medium"
+                    android:text="@string/on_background"
+                    android:textColor="?attr/colorOnBackground"
+                    android:textSize="24sp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
