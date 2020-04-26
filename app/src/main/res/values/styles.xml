@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="MainBottomNavigationViewStyle" parent="@style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface">
+    <style name="MainBottomNavigationViewStyle" parent="@style/Widget.MaterialComponents.BottomNavigationView.Colored">
         <item name="itemTextColor">@color/menu_selection_highlighter</item>
         <item name="itemIconTint">@color/menu_selection_highlighter</item>
         <item name="labelVisibilityMode">selected</item>

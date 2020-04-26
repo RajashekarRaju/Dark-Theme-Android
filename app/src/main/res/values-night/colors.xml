@@ -2,11 +2,11 @@
 <resources>
 
     <color name="colorSurface">#121212</color>
-    <color name="colorSecondary">#ff6f00</color>
     <color name="colorPrimary">#212121</color>
+    <color name="colorSecondary">#ff6f00</color>
     <color name="colorBackground">#000000</color>
 
-    <color name="colorOnSurface">#ffffff</color>
+    <color name="colorOnSurface">#FDFDFD</color>
     <color name="colorOnPrimary">#ffffff</color>
     <color name="colorOnSecondary">#000000</color>
     <color name="colorOnBackground">#ffffff</color>

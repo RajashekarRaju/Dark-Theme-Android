@@ -5,13 +5,14 @@
         <item name="colorSurface">@color/colorSurface</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
         <item name="colorOnSurface">@color/colorOnSurface</item>
         <item name="colorOnPrimary">@color/colorOnPrimary</item>
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
         <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="bottomNavigationStyle">@style/MainBottomNavigationViewStyle</item>
     </style>
 
 </resources>
